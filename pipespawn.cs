@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pipespawn : MonoBehaviour
+public class PipeSpawn : MonoBehaviour
 {
     public GameObject pipe;
-    public float spawnRate = 2;
+    public float spawnRate = 10;
     private float timer = 0;
-    public float heightoffset = 10;
+    public float heightoffset = 44.7f;
 
-    // Start is called before the first frame update
-    void Start()
+    //Start is called before the first frame update 
+    void Start() 
     {
         spawnpipe();
     }
@@ -34,6 +34,6 @@ public class pipespawn : MonoBehaviour
     {
         float lowestPoint = transform.position.y - heightoffset;
         float highestPoint = transform.position.y + heightoffset;
-        Instantiate(pipe, new Vector3(transform.position.x,Random.Range(lowestPoint,highestPoint),0), transform.rotation);
+        Instantiate(pipe, new Vector3(transform.position.x,Random.Range(lowestPoint,highestPoint),0), transform.rotation); //spawns pipe prefab
     }
 }
